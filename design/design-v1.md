@@ -19,7 +19,7 @@ Build a self-improving system where a meta-agent loop researches, improves, and 
 **Role:** Identifies the human craft that each script replaces, researches what a master practitioner in that craft actually does, and defines the gap between what we have and what "awesome" looks like.
 
 **Process:**
-1. **Identify the craft:** What human role does this script replace? (e.g., `ic-containers.py` replaces a senior Docker/SRE engineer)
+1. **Identify the craft:** What human role does this script replace? (e.g., `container-monitor.py` replaces a senior container/SRE engineer)
 2. **Scout for experts:** Search for who the recognized experts are in that domain. Check the expert directory (persistent state). Find new voices.
 3. **Deep research:** Read what experts actually do — blog posts, conference talks, books, open-source projects. Focus on: best practices, failure modes, optimization techniques, professional workflows.
 4. **Incident feedback:** Review recent incidents and script failures — what did we miss? What should we have caught?
@@ -65,9 +65,9 @@ Build a self-improving system where a meta-agent loop researches, improves, and 
 
 | Script | Human Role | Priority | Why |
 |--------|-----------|----------|-----|
-| `ic-containers.py` | Senior Docker/SRE engineer | 1 | Highest impact — monitors all containers |
-| `ic-resources.py` | Capacity planning engineer | 2 | Predicts disk/memory issues |
-| `ic-errors.py` | Observability engineer | 3 | Log analysis and error detection |
+| `container-monitor.py` | Senior container/SRE engineer | 1 | Highest impact — monitors all containers |
+| `resource-check.py` | Capacity planning engineer | 2 | Predicts disk/memory issues |
+| `error-scanner.py` | Observability engineer | 3 | Log analysis and error detection |
 | `network-guard.py` | Network security analyst | 4 | Security monitoring accuracy |
 | `network-guard.py --analyze` | Threat intelligence analyst | 5 | Anomaly detection quality |
 
@@ -99,7 +99,7 @@ Build a self-improving system where a meta-agent loop researches, improves, and 
 ## Success Criteria
 
 After 10 cycles (10 weeks), we should see:
-- `ic-containers.py` handles 3+ failure modes it doesn't today
+- `container-monitor.py` handles 3+ failure modes it doesn't today
 - False positive rate decreased (fewer unnecessary alerts)
 - At least one auto-remediation that works correctly
 - Expert directory has 10+ curated sources across all domains

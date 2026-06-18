@@ -1,7 +1,7 @@
-# Docker Container Monitoring — Research Findings (Cycle 1)
+# Container Monitoring — Research Findings (Cycle 1)
 
 **Date:** 2026-06-12
-**Source:** Loop Engineer Cycle 1 research for ic-containers.py
+**Source:** Loop Engineer Cycle 1 research for container-monitor.py
 **Experts consulted:** Last9, Dockmon, Xitoring, Dash0, Grizzly Peak Software
 
 ## Top Insights
@@ -36,8 +36,8 @@ Also handle the zero-time sentinel: `0001-01-01T00:00:00Z` means "never finished
 ### 5. Health Check Hierarchy
 
 Production monitoring tools check at three levels:
-1. **Process alive** — is the container running? (what ic-containers.py already checks)
-2. **Health check passing** — does Docker's HEALTHCHECK report healthy? (ic-containers.py catches "unhealthy")
+1. **Process alive** — is the container running? (what container-monitor.py already checks)
+2. **Health check passing** — does Docker's HEALTHCHECK report healthy? (container-monitor.py catches "unhealthy")
 3. **Service responding** — is the application actually serving requests? (gap — requires HTTP/TCP probes)
 
 ## Sources

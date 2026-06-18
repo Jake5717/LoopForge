@@ -50,4 +50,4 @@ PM researched 20+ articles on loop engineering, self-improving agents, and multi
 - [x] Objective measurement criteria (6 metrics with definitions)
 - [x] Clear termination conditions (quality thresholds + consecutive non-improvement)
 - [x] Practical incident integration (input to research brief)
-- [x] First real cycle clearly scoped (ic-containers.py)
+- [x] First real cycle clearly scoped (container-monitor.py)

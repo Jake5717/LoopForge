@@ -11,9 +11,9 @@ The Loop Engineer's backlog is NOT a static list — it's fed by real problems f
 ## How Items Get Added
 
 ### 1. [USER]'s Feedback (highest priority)
-When [USER] says "that script was wrong" or "ic-containers gave a bad alert":
+When [USER] says "that script was wrong" or "container-monitor gave a bad alert":
 ```bash
-python3 ~/.loopforge/scripts/loop-engineer-feedback.py --feedback "ic-containers.py false positive on NAS/host containers"
+python3 ~/.loopforge/scripts/loop-engineer-feedback.py --feedback "container-monitor.py false positive on NAS/host containers"
 ```
 
 ### 2. Incidents
@@ -25,13 +25,13 @@ python3 ~/.loopforge/scripts/loop-engineer-feedback.py --incident ~/.loopforge/i
 ### 3. Verifier Findings
 When the Verifier flags something in a previous cycle:
 ```bash
-python3 ~/.loopforge/scripts/loop-engineer-feedback.py --verifier "ic-errors.py missing cross-host correlation"
+python3 ~/.loopforge/scripts/loop-engineer-feedback.py --verifier "error-scanner.py missing cross-host correlation"
 ```
 
 ### 4. System Self-Assessment
 When the Loop Engineer identifies its own process gaps:
 ```bash
-python3 ~/.loopforge/scripts/loop-engineer-feedback.py --system "Selection logic keeps picking ic-containers — needs broader rotation"
+python3 ~/.loopforge/scripts/loop-engineer-feedback.py --system "Selection logic keeps picking container-monitor — needs broader rotation"
 ```
 
 ## Backlog Format

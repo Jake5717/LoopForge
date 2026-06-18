@@ -106,15 +106,15 @@ If only logic tests are possible (e.g., no containers are currently down), that'
 - What constitutes a useful finding vs. noise
 - Token budget for research phase
 
-### Example Research Brief: ic-containers.py
+### Example Research Brief: container-monitor.py
 
 ```yaml
-script: ic-containers.py
-replaces: Senior Docker/SRE engineer
+script: container-monitor.py
+replaces: Senior container/SRE engineer
 research_budget: 10000  # tokens
 
 questions:
-  - "What health checks do production Docker monitoring tools use beyond 'container running'?"
+  - "What health checks do production container monitoring tools use beyond 'container running'?"
   - "What are the most common false positive patterns in container monitoring?"
   - "What auto-remediation actions are safe to take for container failures?"
   - "How do tools like cAdvisor, Prometheus container_exporter, and Datadog agent check container health?"
@@ -190,7 +190,7 @@ Each cycle logs:
 - Cumulative cost per script
 - Cost per improvement (total cost / number of improvements landed)
 
-This lets [USER] see: "ic-containers.py has cost $X total, yielded Y improvements, average cost per improvement: $Z."
+This lets [USER] see: "container-monitor.py has cost $X total, yielded Y improvements, average cost per improvement: $Z."
 
 ## Persistent State (restructured)
 
@@ -245,21 +245,21 @@ The Improver reads this at the start of every cycle. Any proposed change that vi
 | 13 | **Human feedback channel** | [USER] can flag bad improvements; objectives kernel updated | No mechanism for operator to reject changes |
 | 14 | **Abandon state** | After 2 failures in same improvement direction, mark as abandoned | Repeatedly trying dead-end approaches |
 
-## First Real Cycle: ic-containers.py
+## First Real Cycle: container-monitor.py
 
 ### Scope
 
-**Script:** `~/.loopforge/skills/incident-commander/scripts/ic-containers.py`
+**Script:** `~/.loopforge/skills/incident-commander/scripts/container-monitor.py`
 **Domain:** Container health monitoring (Docker)
 **Research brief:** To be written (see template above)
 **Baseline capture:** Run script, record current detection count, false positives, output format
 
 ### Cycle 1 Plan
 
-1. **Capture baseline:** Run ic-containers.py, record metrics
+1. **Capture baseline:** Run container-monitor.py, record metrics
 2. **Improver phase:**
    - Read research brief for container monitoring
-   - Research: What do production Docker monitoring tools check beyond "container running"?
+   - Research: What do production container monitoring tools check beyond "container running"?
    - Identify top improvement (likely: health check integration, restart count monitoring, or resource threshold alerts)
    - Implement one improvement
    - Self-check: does it run?
@@ -282,7 +282,7 @@ The Improver reads this at the start of every cycle. Any proposed change that vi
 
 - ~30K tokens per cycle
 - At V2.5 Pro pricing: ~$0.15-0.30 per cycle
-- **10 cycles = ~$1.50-3.00 total** for ic-containers.py
+- **10 cycles = ~$1.50-3.00 total** for container-monitor.py
 
 ## Open Questions (resolved from v1)
 
@@ -353,5 +353,5 @@ Expert practices that require enterprise infrastructure are logged as knowledge 
 
 1. **Research brief quality:** How do we know if a research brief is good enough? (Answer: try it, iterate on the brief if the Improver keeps finding noise)
 2. **Verifier calibration:** How strict should the Verifier be initially? (Answer: start strict, relax if it rejects everything)
-3. **Cross-script learning:** Should improvements to ic-containers.py inform ic-resources.py? (Answer: yes, via expert-knowledge/ shared directory)
+3. **Cross-script learning:** Should improvements to container-monitor.py inform resource-check.py? (Answer: yes, via expert-knowledge/ shared directory)
 4. **[USER] review cadence:** How often should [USER] review cycle results? (Answer: after every 3 cycles, or when a cycle fails twice on the same script)

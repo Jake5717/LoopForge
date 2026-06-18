@@ -17,8 +17,8 @@
 
 The 4th seat changes based on the proposal's `target_job`:
 
-- ic-containers.py → Senior SRE / Docker Specialist
-- ic-errors.py → Observability / Monitoring Engineer
+- container-monitor.py → Senior SRE / Docker Specialist
+- error-scanner.py → Observability / Monitoring Engineer
 - network-guard.py → Network Security Analyst
 - Product Research → Market Research / Competitive Analyst
 - Ward → Governance / Compliance Auditor

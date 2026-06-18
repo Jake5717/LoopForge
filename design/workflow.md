@@ -10,9 +10,9 @@ Four ways problems enter the system:
 
 | Source | What It Is | Example |
 |--------|-----------|---------|
-| **[USER]'s Feedback** | You tell me something's wrong | "ic-containers.py gave a wrong alert" |
+| **[USER]'s Feedback** | You tell me something's wrong | "container-monitor.py gave a wrong alert" |
 | **Incidents** | Something actually broke | Container crash, disk full, service down |
-| **Verifier Findings** | Previous cycle found a gap | "ic-errors.py missing cross-host correlation" |
+| **Verifier Findings** | Previous cycle found a gap | "error-scanner.py missing cross-host correlation" |
 | **System Gaps** | The system identifies its own weakness | "Advisory Board from cron doesn't work" |
 
 **How feedback gets ingested:** I run `python3 ~/.loopforge/scripts/loop-engineer-feedback.py --feedback "..."` and it adds the item to `backlog.md` under the relevant job.
@@ -70,14 +70,14 @@ The Verifier is **adversarial by design:**
 A plain-English summary delivered to [USER]:
 
 ```
-Job: ic-containers.py
+Job: container-monitor.py
 What: Added healthcheck detail reporting
 Verdict: PASS
 Cost: ~$0.53
 Your call: "ship it" / "skip" / "reprioritize"
 ```
 
-[USER] doesn't need to evaluate Docker monitoring best practices. He reads one paragraph and decides.
+[USER] doesn't need to evaluate container monitoring best practices. He reads one paragraph and decides.
 
 ### 7. [USER] DECIDES
 

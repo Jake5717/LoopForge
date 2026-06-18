@@ -1,6 +1,6 @@
 # Loop Engineer — Pilot Results
 
-## Pilot 1: ic-containers.py (Manual, 2026-06-12)
+## Pilot 1: container-monitor.py (Manual, 2026-06-12)
 
 **Improvement:** Added `get_healthcheck_details()` — queries `docker inspect` for failing streak, exit code, and output when container is unhealthy.
 

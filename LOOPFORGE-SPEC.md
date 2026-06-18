@@ -120,17 +120,17 @@ Generate 3-5 proposals (not just one).
 
 | # | Job | Type | Domain |
 |---|-----|------|--------|
-| 1 | ic-containers.py | Script | Docker/SRE |
-| 2 | ic-resources.py | Script | Capacity planning |
-| 3 | ic-errors.py | Script | Observability |
+| 1 | container-monitor.py | Script | container/SRE |
+| 2 | resource-check.py | Script | Capacity planning |
+| 3 | error-scanner.py | Script | Observability |
 | 4 | network-guard.py | Script | Network security |
 | 5 | Network Guard Analysis | Agent | Threat intelligence |
-| 6 | IC Morning Briefing | Agent | SRE |
+| 6 | Daily Briefing | Agent | SRE |
 | 7 | Ward | Agent | Governance |
 | 8 | Scribe | Agent | Knowledge mgmt |
 | 9 | Product Research | Script+Agent | Market intelligence |
-| 10 | Discord Thread Renamer | Script | Community mgmt |
-| 11 | Hermes & AI News | Agent | Research |
+| 10 | Thread Organizer | Script | Community mgmt |
+| 11 | News Digest | Agent | Research |
 | 12 | Current Events | Agent | Research |
 | 13 | Git Backup | Agent | DevOps |
 | 14 | Loop Engineer (this system) | Meta | Self-improvement |
@@ -533,7 +533,7 @@ All in `~/.loopforge/data/loop-engineer/`:
 Script: `~/.loopforge/scripts/loop-engineer-feedback.py`
 
 ```bash
-python3 ~/.loopforge/scripts/loop-engineer-feedback.py --feedback "ic-containers.py gave wrong alert"
+python3 ~/.loopforge/scripts/loop-engineer-feedback.py --feedback "container-monitor.py gave wrong alert"
 python3 ~/.loopforge/scripts/loop-engineer-feedback.py --verifier "Research only did web searches, no GitHub repos"
 python3 ~/.loopforge/scripts/loop-engineer-feedback.py --system "Improver prompt too vague"
 ```
@@ -587,7 +587,7 @@ See `references/idea-verifier-cost-incident.md` for the full incident timeline a
 ## Pitfalls
 
 - **Don't describe changes without implementing them.** [USER]: "I thought we already upgraded to a two model process. I want that. Do that now." If approved, implement immediately.
-- **Don't default to one job.** The system improves ALL 14+ jobs, not just ic-containers.py. [USER]: "you keep talking about containers — that's just 1 cron job out of many."
+- **Don't default to one job.** The system improves ALL 14+ jobs, not just container-monitor.py. [USER]: "you keep talking about containers — that's just 1 cron job out of many."
 - **Don't build governance before running a cycle.** We built Advisory Board, intake process, tiered approval before running a single successful pilot. Strip to basics first, prove the pattern, then add complexity.
 - **Don't skip the improvement brief.** The PM's job is to research and hand off. Jumping straight to coding produces weak improvements backed by shallow research.
 - **Test infrastructure before building on it.** `delegate_task` from cron failed. `context_from` chaining was unreliable. Test these before designing features that depend on them.

@@ -7,8 +7,8 @@ Users submit requests via natural conversation. Your agent framework routes them
 **Request types:**
 | Type | Example | Flow |
 |------|---------|------|
-| Feature request | "I want error scanning to check Docker logs" | PM evaluates → Advisory Board → [USER] approves |
-| Bug report | "ic-containers.py gave a false alert" | PM investigates → proposes fix → Verifier checks → [USER] approves |
+| Feature request | "I want error scanning to check container logs" | PM evaluates → Advisory Board → [USER] approves |
+| Bug report | "container-monitor.py gave a false alert" | PM investigates → proposes fix → Verifier checks → [USER] approves |
 | New product | "I want email monitoring" | PM researches scope → Advisory Board reviews → [USER] approves → Engineering builds |
 
 **Key principle:** User requests and autonomous improvements go in the same backlog, prioritized together. The PM decides which to do first based on impact and effort.
@@ -53,4 +53,4 @@ Weekly summary delivered to [USER]:
 
 ## Key Insight (from [USER])
 
-[USER] is not a technical expert on Docker monitoring, network security, etc. He shouldn't evaluate technical recommendations. The Advisory Board gives him a verdict he can trust: "3/4 experts recommend this, SRE says high value, risk expert says low risk." [USER]'s decision becomes "agree with the experts" or "override with reason."
+[USER] is not a technical expert on container monitoring, network security, etc. He shouldn't evaluate technical recommendations. The Advisory Board gives him a verdict he can trust: "3/4 experts recommend this, SRE says high value, risk expert says low risk." [USER]'s decision becomes "agree with the experts" or "override with reason."

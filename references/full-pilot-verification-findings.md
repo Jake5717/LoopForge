@@ -7,7 +7,7 @@ The Loop Engineer FULL PILOT test revealed fundamental architectural failures th
 ## Test Context
 
 **What was tested:** End-to-end Loop Engineer pipeline
-- Improver (V2.5 Pro): Research + implement ic-containers.py improvement
+- Improver (V2.5 Pro): Research + implement container-monitor.py improvement
 - Advisory Board: 4 expert subagents via `delegate_task` 
 - Verifier (Claude Sonnet): Adversarial review + steering summary
 
