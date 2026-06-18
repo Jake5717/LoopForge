@@ -25,16 +25,16 @@ DOMAIN_EXPERTS = {
     "IC Morning Briefing": "SRE / Incident Response Lead",
     "Ward": "Governance / Compliance Auditor",
     "Scribe": "Knowledge Management Specialist",
-    "LinkedIn Monitor": "Technical Recruiter / Career Strategist",
+    "Product Research": "Market Research / Competitive Analyst",
     "Discord Thread Renamer": "Community Manager",
     "Hermes & AI News": "AI/ML Research Analyst",
-    "Guyana News": "Regional Analyst / Journalist",
+    "Current Events": "News Analyst / Journalist",
     "Git Backup": "DevOps / Disaster Recovery Engineer",
     "loop-engineer": "SDLC / Process Improvement Expert",
 }
 ```
 
-**Why dynamic:** An SRE has no relevant opinion on meal planning or LinkedIn job matching. The expert must match the domain.
+**Why dynamic:** An SRE has no relevant opinion on meal planning or market research. The expert must match the domain.
 
 ### Voting Rules
 

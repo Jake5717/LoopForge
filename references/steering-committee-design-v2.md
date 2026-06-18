@@ -20,7 +20,7 @@ The 4th seat changes based on the proposal's `target_job`:
 - ic-containers.py → Senior SRE / Docker Specialist
 - ic-errors.py → Observability / Monitoring Engineer
 - network-guard.py → Network Security Analyst
-- LinkedIn Monitor → Technical Recruiter / Career Strategist
+- Product Research → Market Research / Competitive Analyst
 - Ward → Governance / Compliance Auditor
 - Loop Engineer → SDLC / Process Improvement Expert
 - ... (14 jobs mapped, see script for full list)
