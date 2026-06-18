@@ -110,7 +110,7 @@ The system doesn't just improve your tools — it improves *itself*:
 ```bash
 git clone https://github.com/Jake5717/LoopForge.git
 cd LoopForge
-pip install -r requirements.txt  # coming soon
+# No third-party dependencies — scripts use only the Python standard library.
 ```
 
 ### Configuration
@@ -120,6 +120,13 @@ Set environment variables for your LLM providers:
 ```bash
 export OPENROUTER_API_KEY="your-key-here"
 # Add other provider keys as needed
+```
+
+Optional — override where LoopForge stores its state (defaults to `~/.loopforge`):
+
+```bash
+export LOOPFORGE_DATA_DIR="$HOME/.loopforge"
+export LOOPFORGE_OWNER="your-name"
 ```
 
 ### Usage
@@ -154,7 +161,7 @@ LoopForge/
 │   ├── approval-manager.py      ← Async approval workflow
 │   ├── approval-processor.py    ← Applies approved changes
 │   ├── pipeline-tracker.py      ← Cost tracking + outcome measurement
-│   └── feedback-ingest.py       ← Backlog ingestion from feedback
+│   └── loop-engineer-feedback.py ← Backlog ingestion from feedback
 ├── references/
 │   ├── architecture-decisions.md
 │   ├── governance-model.md
