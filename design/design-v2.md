@@ -3,7 +3,7 @@
 **Date:** 2026-06-12
 **Status:** Revised after meta-loop PM review + independent verification
 **Authors:** [USER] + Hermes (v1), PM research + Loop Engineer revision (v2), Meta-loop engineering (v3)
-**Previous version:** design-v2.md
+**Previous version:** design-v1.md
 
 ## What Changed from v1
 
@@ -27,7 +27,7 @@
 | Research context | Generic expert benchmark | Homelab-applicability filter | PM 2.1 (partial) |
 | Verifier testing | "Run the script" | Formalized logic-test + live-test approach | PM 2.3 (confirmed) |
 | Verifier model | V2.5 | Claude Sonnet via OpenRouter | PM 2.4 + 5.5 (confirmed) |
-| Conversation dynamics | No guidance | "Challenge mode" instruction for Hermes | PM 3.1 (confirmed) |
+| Conversation dynamics | No guidance | "Challenge mode" instruction for the agent | PM 3.1 (confirmed) |
 | Post-commit monitoring | None | Rollback + monitoring after commit | PM 4.3 (confirmed) |
 | Human feedback | None | Feedback mechanism for [USER] | PM 4.4 (confirmed) |
 | Failed improvement tracking | Revert only | Abandon state after repeated failures | PM 5.6 (confirmed) |
@@ -69,7 +69,7 @@ Build a self-improving system where a meta-agent loop researches, improves, and 
 
 **Output:** Modified script + change log explaining what was changed and why.
 
-**Model:** Hermes with V2.5 Pro (coding quality matters here)
+**Model:** A capable coding model (coding quality matters here)
 
 ### Agent 2: Verifier (Adversarial QA)
 
@@ -129,7 +129,7 @@ useful_finding: "A concrete check or metric we can add to the script"
 noise: "General monitoring philosophy, tool comparisons without actionable specifics"
 ```
 
-Research briefs are stored in `~/.hermes/data/loop-engineer/research-briefs/` and are written once per script domain, then reused across cycles. The Improver reads the brief, does focused research, and implements.
+Research briefs are stored in `~/.loopforge/data/loop-engineer/research-briefs/` and are written once per script domain, then reused across cycles. The Improver reads the brief, does focused research, and implements.
 
 ## Measurement Framework
 
@@ -249,7 +249,7 @@ The Improver reads this at the start of every cycle. Any proposed change that vi
 
 ### Scope
 
-**Script:** `~/.hermes/skills/incident-commander/scripts/ic-containers.py`
+**Script:** `~/.loopforge/skills/incident-commander/scripts/ic-containers.py`
 **Domain:** Container health monitoring (Docker)
 **Research brief:** To be written (see template above)
 **Baseline capture:** Run script, record current detection count, false positives, output format
@@ -296,7 +296,7 @@ The Improver reads this at the start of every cycle. Any proposed change that vi
 
 ## Comprehension Debt Tracking
 
-Osmani's warning: "the gap that widens when a system ships code you never read." Every improvement committed by the loop MUST include a plain-English changelog:
+Every improvement committed by the loop MUST include a plain-English changelog:
 
 - **What changed** (one sentence)
 - **Why it changed** (the research finding that motivated it)
@@ -322,9 +322,9 @@ After an improvement is committed, the next 2 cycles include a check: "Is the pr
 
 If an improvement direction fails 2 consecutive times (e.g., "add resource monitoring" fails in Cycle N and Cycle N+1), it is marked as "abandoned" with an explanation. Future cycles skip abandoned directions. This prevents wasted cycles on dead ends.
 
-## Existing Loop Patterns in Hermes
+## Existing Loop Patterns (Reference)
 
-The Loop Engineer builds on patterns already present in Hermes:
+The Loop Engineer builds on common agent-framework patterns:
 - **subagent-driven-development**: Two-stage review (spec compliance + quality) with fix-and-retry
 - **requesting-code-review**: Auto-fix loop (max 2 cycles)
 - **ward**: Nightly governance audits
