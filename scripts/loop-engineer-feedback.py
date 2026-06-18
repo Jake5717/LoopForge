@@ -33,10 +33,10 @@ JOB_MAP = {
     "morning-briefing": "Job 6: IC Morning Briefing",
     "ward": "Job 7: Ward",
     "scribe": "Job 8: Scribe",
-    "linkedin": "Job 9: LinkedIn Monitor",
+    "product-research": "Job 9: Product Research",
     "discord": "Job 10: Discord Thread Renamer",
     "hermes-news": "Job 11: Hermes & AI News",
-    "guyana": "Job 12: Guyana News",
+    "current-events": "Job 12: Current Events",
     "git-backup": "Job 13: Git Backup",
     "loop-engineer": "Job 14: Loop Engineer (Self-Improvement)",
 }
