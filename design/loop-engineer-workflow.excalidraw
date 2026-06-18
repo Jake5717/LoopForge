@@ -1,0 +1,280 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "hermes-agent",
+  "elements": [
+    {
+      "type": "text", "id": "title", "x": 250, "y": 20, "width": 500, "height": 35,
+      "text": "Loop Engineer — Kaizen Workflow", "fontSize": 28, "fontFamily": 1,
+      "strokeColor": "#1e1e1e", "originalText": "Loop Engineer — Kaizen Workflow", "autoResize": true
+    },
+
+    {
+      "type": "text", "id": "input_label", "x": 50, "y": 80, "width": 200, "height": 20,
+      "text": "INPUT SOURCES", "fontSize": 16, "fontFamily": 1,
+      "strokeColor": "#868e96", "originalText": "INPUT SOURCES", "autoResize": true
+    },
+
+    {
+      "type": "rectangle", "id": "r_jake", "x": 50, "y": 110, "width": 180, "height": 60,
+      "roundness": {"type": 3}, "backgroundColor": "#a5d8ff", "fillStyle": "solid",
+      "boundElements": [{"id": "t_jake", "type": "text"}]
+    },
+    {
+      "type": "text", "id": "t_jake", "x": 55, "y": 120, "width": 170, "height": 40,
+      "text": "Jake's Feedback\n\"that script was wrong\"", "fontSize": 14, "fontFamily": 1,
+      "strokeColor": "#1e1e1e", "textAlign": "center", "verticalAlign": "middle",
+      "containerId": "r_jake", "originalText": "Jake's Feedback\n\"that script was wrong\"", "autoResize": true
+    },
+
+    {
+      "type": "rectangle", "id": "r_incident", "x": 260, "y": 110, "width": 180, "height": 60,
+      "roundness": {"type": 3}, "backgroundColor": "#ffc9c9", "fillStyle": "solid",
+      "boundElements": [{"id": "t_incident", "type": "text"}]
+    },
+    {
+      "type": "text", "id": "t_incident", "x": 265, "y": 120, "width": 170, "height": 40,
+      "text": "Incidents\nsomething broke", "fontSize": 14, "fontFamily": 1,
+      "strokeColor": "#1e1e1e", "textAlign": "center", "verticalAlign": "middle",
+      "containerId": "r_incident", "originalText": "Incidents\nsomething broke", "autoResize": true
+    },
+
+    {
+      "type": "rectangle", "id": "r_verifier_in", "x": 470, "y": 110, "width": 180, "height": 60,
+      "roundness": {"type": 3}, "backgroundColor": "#d0bfff", "fillStyle": "solid",
+      "boundElements": [{"id": "t_verifier_in", "type": "text"}]
+    },
+    {
+      "type": "text", "id": "t_verifier_in", "x": 475, "y": 120, "width": 170, "height": 40,
+      "text": "Verifier Findings\n\"this could be better\"", "fontSize": 14, "fontFamily": 1,
+      "strokeColor": "#1e1e1e", "textAlign": "center", "verticalAlign": "middle",
+      "containerId": "r_verifier_in", "originalText": "Verifier Findings\n\"this could be better\"", "autoResize": true
+    },
+
+    {
+      "type": "rectangle", "id": "r_system", "x": 680, "y": 110, "width": 180, "height": 60,
+      "roundness": {"type": 3}, "backgroundColor": "#fff3bf", "fillStyle": "solid",
+      "boundElements": [{"id": "t_system", "type": "text"}]
+    },
+    {
+      "type": "text", "id": "t_system", "x": 685, "y": 120, "width": 170, "height": 40,
+      "text": "System Gaps\nself-improvement", "fontSize": 14, "fontFamily": 1,
+      "strokeColor": "#1e1e1e", "textAlign": "center", "verticalAlign": "middle",
+      "containerId": "r_system", "originalText": "System Gaps\nself-improvement", "autoResize": true
+    },
+
+    {
+      "type": "arrow", "id": "a1", "x": 140, "y": 170, "width": 0, "height": 40,
+      "points": [[0, 0], [0, 40]], "endArrowhead": "arrow", "strokeColor": "#868e96"
+    },
+    {
+      "type": "arrow", "id": "a2", "x": 350, "y": 170, "width": 0, "height": 40,
+      "points": [[0, 0], [0, 40]], "endArrowhead": "arrow", "strokeColor": "#868e96"
+    },
+    {
+      "type": "arrow", "id": "a3", "x": 560, "y": 170, "width": 0, "height": 40,
+      "points": [[0, 0], [0, 40]], "endArrowhead": "arrow", "strokeColor": "#868e96"
+    },
+    {
+      "type": "arrow", "id": "a4", "x": 770, "y": 170, "width": 0, "height": 40,
+      "points": [[0, 0], [0, 40]], "endArrowhead": "arrow", "strokeColor": "#868e96"
+    },
+
+    {
+      "type": "rectangle", "id": "r_backlog", "x": 200, "y": 220, "width": 500, "height": 60,
+      "roundness": {"type": 3}, "backgroundColor": "#c3fae8", "fillStyle": "solid",
+      "boundElements": [{"id": "t_backlog", "type": "text"}]
+    },
+    {
+      "type": "text", "id": "t_backlog", "x": 205, "y": 225, "width": 490, "height": 50,
+      "text": "DYNAMIC BACKLOG\nbacklog.md — prioritized by urgency + recency", "fontSize": 16, "fontFamily": 1,
+      "strokeColor": "#1e1e1e", "textAlign": "center", "verticalAlign": "middle",
+      "containerId": "r_backlog", "originalText": "DYNAMIC BACKLOG\nbacklog.md — prioritized by urgency + recency", "autoResize": true
+    },
+
+    {
+      "type": "arrow", "id": "a5", "x": 450, "y": 280, "width": 0, "height": 40,
+      "points": [[0, 0], [0, 40]], "endArrowhead": "arrow", "strokeColor": "#1e1e1e"
+    },
+
+    {
+      "type": "rectangle", "id": "r_improver", "x": 250, "y": 330, "width": 400, "height": 80,
+      "roundness": {"type": 3}, "backgroundColor": "#a5d8ff", "fillStyle": "solid",
+      "boundElements": [{"id": "t_improver", "type": "text"}]
+    },
+    {
+      "type": "text", "id": "t_improver", "x": 255, "y": 335, "width": 390, "height": 70,
+      "text": "IMPROVER (V2.5 Pro)\n1. Pick job from backlog\n2. Research what expert would do\n3. Implement ONE improvement", "fontSize": 16, "fontFamily": 1,
+      "strokeColor": "#1e1e1e", "textAlign": "center", "verticalAlign": "middle",
+      "containerId": "r_improver", "originalText": "IMPROVER (V2.5 Pro)\n1. Pick job from backlog\n2. Research what expert would do\n3. Implement ONE improvement", "autoResize": true
+    },
+
+    {
+      "type": "arrow", "id": "a6", "x": 450, "y": 410, "width": 0, "height": 40,
+      "points": [[0, 0], [0, 40]], "endArrowhead": "arrow", "strokeColor": "#1e1e1e",
+      "boundElements": [{"id": "t_a6", "type": "text"}]
+    },
+    {
+      "type": "text", "id": "t_a6", "x": 460, "y": 415, "width": 120, "height": 20,
+      "text": "modified script", "fontSize": 14, "fontFamily": 1,
+      "strokeColor": "#868e96", "textAlign": "center", "verticalAlign": "middle",
+      "containerId": "a6", "originalText": "modified script", "autoResize": true
+    },
+
+    {
+      "type": "rectangle", "id": "r_verifier", "x": 250, "y": 460, "width": 400, "height": 80,
+      "roundness": {"type": 3}, "backgroundColor": "#d0bfff", "fillStyle": "solid",
+      "boundElements": [{"id": "t_verifier", "type": "text"}]
+    },
+    {
+      "type": "text", "id": "t_verifier", "x": 255, "y": 465, "width": 390, "height": 70,
+      "text": "VERIFIER (Claude Sonnet)\nAdversarial review — different model\nChecks: syntax, edge cases, regressions\nVerdict: PASS or FAIL", "fontSize": 16, "fontFamily": 1,
+      "strokeColor": "#1e1e1e", "textAlign": "center", "verticalAlign": "middle",
+      "containerId": "r_verifier", "originalText": "VERIFIER (Claude Sonnet)\nAdversarial review — different model\nChecks: syntax, edge cases, regressions\nVerdict: PASS or FAIL", "autoResize": true
+    },
+
+    {
+      "type": "arrow", "id": "a7", "x": 450, "y": 540, "width": 0, "height": 40,
+      "points": [[0, 0], [0, 40]], "endArrowhead": "arrow", "strokeColor": "#1e1e1e"
+    },
+
+    {
+      "type": "diamond", "id": "d_pass", "x": 375, "y": 590, "width": 150, "height": 80,
+      "backgroundColor": "#fff3bf", "fillStyle": "solid",
+      "boundElements": [{"id": "t_pass", "type": "text"}]
+    },
+    {
+      "type": "text", "id": "t_pass", "x": 380, "y": 610, "width": 140, "height": 30,
+      "text": "PASS / FAIL?", "fontSize": 18, "fontFamily": 1,
+      "strokeColor": "#1e1e1e", "textAlign": "center", "verticalAlign": "middle",
+      "containerId": "d_pass", "originalText": "PASS / FAIL?", "autoResize": true
+    },
+
+    {
+      "type": "arrow", "id": "a_pass_right", "x": 525, "y": 630, "width": 150, "height": 0,
+      "points": [[0, 0], [150, 0]], "endArrowhead": "arrow", "strokeColor": "#2b8a3e",
+      "boundElements": [{"id": "t_pass_label", "type": "text"}]
+    },
+    {
+      "type": "text", "id": "t_pass_label", "x": 560, "y": 610, "width": 80, "height": 20,
+      "text": "PASS", "fontSize": 16, "fontFamily": 1,
+      "strokeColor": "#2b8a3e", "textAlign": "center", "verticalAlign": "middle",
+      "containerId": "a_pass_right", "originalText": "PASS", "autoResize": true
+    },
+
+    {
+      "type": "arrow", "id": "a_fail_left", "x": 375, "y": 630, "width": 150, "height": 0,
+      "points": [[0, 0], [-150, 0]], "endArrowhead": "arrow", "strokeColor": "#c92a2a",
+      "boundElements": [{"id": "t_fail_label", "type": "text"}]
+    },
+    {
+      "type": "text", "id": "t_fail_label", "x": 290, "y": 610, "width": 80, "height": 20,
+      "text": "FAIL", "fontSize": 16, "fontFamily": 1,
+      "strokeColor": "#c92a2a", "textAlign": "center", "verticalAlign": "middle",
+      "containerId": "a_fail_left", "originalText": "FAIL", "autoResize": true
+    },
+
+    {
+      "type": "rectangle", "id": "r_revert", "x": 100, "y": 590, "width": 150, "height": 60,
+      "roundness": {"type": 3}, "backgroundColor": "#ffc9c9", "fillStyle": "solid",
+      "boundElements": [{"id": "t_revert", "type": "text"}]
+    },
+    {
+      "type": "text", "id": "t_revert", "x": 105, "y": 595, "width": 140, "height": 50,
+      "text": "REVERT\nLog failure", "fontSize": 14, "fontFamily": 1,
+      "strokeColor": "#1e1e1e", "textAlign": "center", "verticalAlign": "middle",
+      "containerId": "r_revert", "originalText": "REVERT\nLog failure", "autoResize": true
+    },
+
+    {
+      "type": "rectangle", "id": "r_summary", "x": 690, "y": 590, "width": 200, "height": 60,
+      "roundness": {"type": 3}, "backgroundColor": "#b2f2bb", "fillStyle": "solid",
+      "boundElements": [{"id": "t_summary", "type": "text"}]
+    },
+    {
+      "type": "text", "id": "t_summary", "x": 695, "y": 595, "width": 190, "height": 50,
+      "text": "STEERING SUMMARY\nplain English for Jake", "fontSize": 14, "fontFamily": 1,
+      "strokeColor": "#1e1e1e", "textAlign": "center", "verticalAlign": "middle",
+      "containerId": "r_summary", "originalText": "STEERING SUMMARY\nplain English for Jake", "autoResize": true
+    },
+
+    {
+      "type": "arrow", "id": "a8", "x": 790, "y": 650, "width": 0, "height": 40,
+      "points": [[0, 0], [0, 40]], "endArrowhead": "arrow", "strokeColor": "#1e1e1e"
+    },
+
+    {
+      "type": "diamond", "id": "d_jake", "x": 715, "y": 700, "width": 150, "height": 80,
+      "backgroundColor": "#fff3bf", "fillStyle": "solid",
+      "boundElements": [{"id": "t_jake_d", "type": "text"}]
+    },
+    {
+      "type": "text", "id": "t_jake_d", "x": 720, "y": 720, "width": 140, "height": 30,
+      "text": "Jake decides", "fontSize": 18, "fontFamily": 1,
+      "strokeColor": "#1e1e1e", "textAlign": "center", "verticalAlign": "middle",
+      "containerId": "d_jake", "originalText": "Jake decides", "autoResize": true
+    },
+
+    {
+      "type": "arrow", "id": "a_ship", "x": 790, "y": 780, "width": 0, "height": 40,
+      "points": [[0, 0], [0, 40]], "endArrowhead": "arrow", "strokeColor": "#2b8a3e",
+      "boundElements": [{"id": "t_ship", "type": "text"}]
+    },
+    {
+      "type": "text", "id": "t_ship", "x": 800, "y": 785, "width": 80, "height": 20,
+      "text": "\"ship it\"", "fontSize": 14, "fontFamily": 1,
+      "strokeColor": "#2b8a3e", "textAlign": "center", "verticalAlign": "middle",
+      "containerId": "a_ship", "originalText": "\"ship it\"", "autoResize": true
+    },
+
+    {
+      "type": "rectangle", "id": "r_engineering", "x": 690, "y": 830, "width": 200, "height": 60,
+      "roundness": {"type": 3}, "backgroundColor": "#b2f2bb", "fillStyle": "solid",
+      "boundElements": [{"id": "t_engineering", "type": "text"}]
+    },
+    {
+      "type": "text", "id": "t_engineering", "x": 695, "y": 835, "width": 190, "height": 50,
+      "text": "ENGINEERING PHASE\nCommit + Changelog", "fontSize": 14, "fontFamily": 1,
+      "strokeColor": "#1e1e1e", "textAlign": "center", "verticalAlign": "middle",
+      "containerId": "r_engineering", "originalText": "ENGINEERING PHASE\nCommit + Changelog", "autoResize": true
+    },
+
+    {
+      "type": "arrow", "id": "a_skip", "x": 870, "y": 740, "width": 80, "height": 0,
+      "points": [[0, 0], [80, 0]], "endArrowhead": "arrow", "strokeColor": "#868e96",
+      "boundElements": [{"id": "t_skip", "type": "text"}]
+    },
+    {
+      "type": "text", "id": "t_skip", "x": 890, "y": 720, "width": 60, "height": 20,
+      "text": "\"skip\"", "fontSize": 14, "fontFamily": 1,
+      "strokeColor": "#868e96", "textAlign": "center", "verticalAlign": "middle",
+      "containerId": "a_skip", "originalText": "\"skip\"", "autoResize": true
+    },
+
+    {
+      "type": "rectangle", "id": "r_state", "x": 250, "y": 830, "width": 400, "height": 60,
+      "roundness": {"type": 3}, "backgroundColor": "#c3fae8", "fillStyle": "solid",
+      "boundElements": [{"id": "t_state", "type": "text"}]
+    },
+    {
+      "type": "text", "id": "t_state", "x": 255, "y": 835, "width": 390, "height": 50,
+      "text": "STATE FILES\ncycle-history.md | changelog.md | expert-directory.json | backlog.md", "fontSize": 14, "fontFamily": 1,
+      "strokeColor": "#1e1e1e", "textAlign": "center", "verticalAlign": "middle",
+      "containerId": "r_state", "originalText": "STATE FILES\ncycle-history.md | changelog.md | expert-directory.json | backlog.md", "autoResize": true
+    },
+
+    {
+      "type": "arrow", "id": "a9", "x": 790, "y": 890, "width": 0, "height": 0,
+      "points": [[0, 0], [-100, 0]], "endArrowhead": "arrow", "strokeColor": "#868e96"
+    },
+
+    {
+      "type": "text", "id": "note1", "x": 50, "y": 920, "width": 800, "height": 40,
+      "text": "Every Sunday: Improver runs 10:00 AM (V2.5 Pro) → Verifier runs 10:30 AM (Claude Sonnet) → Summary to Jake", "fontSize": 16, "fontFamily": 1,
+      "strokeColor": "#868e96", "originalText": "Every Sunday: Improver runs 10:00 AM (V2.5 Pro) → Verifier runs 10:30 AM (Claude Sonnet) → Summary to Jake", "autoResize": true
+    }
+  ],
+  "appState": {
+    "viewBackgroundColor": "#ffffff"
+  }
+}
