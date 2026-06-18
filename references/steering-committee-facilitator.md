@@ -9,7 +9,7 @@ This runs after `steering-committee.py evaluate` completes and writes `sprint-pl
 1. **Merge idea verifier status into proposals:**
    ```python
    import json, os
-   base = os.path.expanduser("~/.hermes/data/loop-engineer")
+   base = os.path.expanduser("~/.loopforge/data/loop-engineer")
    with open(f"{base}/current-proposals.json") as f:
        proposals = json.load(f)
    with open(f"{base}/idea-verdicts.json") as f:
@@ -26,7 +26,7 @@ This runs after `steering-committee.py evaluate` completes and writes `sprint-pl
    ```python
    import json, os
    from datetime import datetime, timezone
-   budget_path = os.path.expanduser("~/.hermes/data/loop-engineer/sprint-budget.json")
+   budget_path = os.path.expanduser("~/.loopforge/data/loop-engineer/sprint-budget.json")
    if not os.path.exists(budget_path):
        budget = {
            "sprint": datetime.now(timezone.utc).strftime("%Y-W%W"),
@@ -38,12 +38,12 @@ This runs after `steering-committee.py evaluate` completes and writes `sprint-pl
 
 3. **Run evaluation:**
    ```bash
-   python3 ~/.hermes/scripts/steering-committee.py evaluate
+   python3 ~/.loopforge/scripts/steering-committee.py evaluate
    ```
 
 ## Processing Results
 
-Read `~/.hermes/data/loop-engineer/sprint-plan.json` for the three lists.
+Read `~/.loopforge/data/loop-engineer/sprint-plan.json` for the three lists.
 
 ### Auto-Shipped Items
 
@@ -51,7 +51,7 @@ For each item in `sprint_plan["auto_ship"]`:
 
 ```bash
 # 1. Create approval record
-python3 ~/.hermes/scripts/approval-manager.py propose \
+python3 ~/.loopforge/scripts/approval-manager.py propose \
   --title "<title>" \
   --description "<description> [Steering Committee: <vote summary>]" \
   --risk <risk> \
@@ -59,7 +59,7 @@ python3 ~/.hermes/scripts/approval-manager.py propose \
   --proposed-by "steering-committee"
 
 # 2. Immediately approve it
-python3 ~/.hermes/scripts/approval-manager.py approve \
+python3 ~/.loopforge/scripts/approval-manager.py approve \
   --id <approval_id> \
   --approved-by "steering-committee" \
   --note "Auto-approved: <vote breakdown>"
@@ -70,7 +70,7 @@ python3 ~/.hermes/scripts/approval-manager.py approve \
 For each item in `sprint_plan["escalate"]`:
 
 ```bash
-python3 ~/.hermes/scripts/approval-manager.py propose \
+python3 ~/.loopforge/scripts/approval-manager.py propose \
   --title "<title>" \
   --description "<description> [Steering Committee: <reason for escalation>]" \
   --risk <risk> \
@@ -84,7 +84,7 @@ Leave as pending — [USER] will approve/deny.
 
 For each item in `sprint_plan["defer"]`:
 
-Add to `~/.hermes/data/loop-engineer/improvement-backlog.md` under the appropriate job section:
+Add to `~/.loopforge/data/loop-engineer/improvement-backlog.md` under the appropriate job section:
 
 ```markdown
 - ⏳ DEFERRED (YYYY-WNN): <title> [prop-NNN] — ROI X.Xx, $N.NN. <vote summary>. Next sprint candidate.
@@ -94,7 +94,7 @@ Add to `~/.hermes/data/loop-engineer/improvement-backlog.md` under the appropria
 
 ```python
 import json, os
-path = os.path.expanduser("~/.hermes/data/loop-engineer/sprint-budget.json")
+path = os.path.expanduser("~/.loopforge/data/loop-engineer/sprint-budget.json")
 with open(path) as f:
     budget = json.load(f)
 auto_cost = sum(e.get("cost_estimate", 0) for e in sprint_plan["auto_ship"])

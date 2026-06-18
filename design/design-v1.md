@@ -92,7 +92,7 @@ Build a self-improving system where a meta-agent loop researches, improves, and 
 
 1. What's the right frequency? Weekly? Biweekly? Per-script cadence?
 2. How do we measure "improvement" objectively, not just "it still works"?
-3. Should the PM incorporate real incident data from `~/.hermes/incidents/`?
+3. Should the PM incorporate real incident data from `~/.loopforge/incidents/`?
 4. How do we prevent improvement churn (constant small changes that don't add up)?
 5. What's the right scope limit per cycle?
 
