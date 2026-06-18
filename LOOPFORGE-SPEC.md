@@ -60,7 +60,7 @@ Each member thinks independently and provides genuine analysis. Majority vote de
 
 ## Sprint Budget
 
-- Default: **$3/week** (configurable in `~/.hermes/data/loop-engineer/sprint-budget.json`)
+- Default: **$3/week** (configurable in `~/.loopforge/data/loop-engineer/sprint-budget.json`)
 - Budget covers: all model costs for the pipeline
 - Auto-shipped items consume budget immediately
 - Escalated items consume budget when [USER] approves
@@ -112,8 +112,8 @@ These require [USER]'s explicit approval regardless of tier:
 
 ### Selection
 
-Read `~/.hermes/data/loop-engineer/backlog.md` — pick highest-priority items.
-Read `~/.hermes/data/loop-engineer/cycle-history.md` — avoid recently improved jobs.
+Read `~/.loopforge/data/loop-engineer/backlog.md` — pick highest-priority items.
+Read `~/.loopforge/data/loop-engineer/cycle-history.md` — avoid recently improved jobs.
 Generate 3-5 proposals (not just one).
 
 ### Full Job Inventory
@@ -128,10 +128,10 @@ Generate 3-5 proposals (not just one).
 | 6 | IC Morning Briefing | Agent | SRE |
 | 7 | Ward | Agent | Governance |
 | 8 | Scribe | Agent | Knowledge mgmt |
-| 9 | LinkedIn Monitor | Script+Agent | Job matching |
+| 9 | Product Research | Script+Agent | Market intelligence |
 | 10 | Discord Thread Renamer | Script | Community mgmt |
 | 11 | Hermes & AI News | Agent | Research |
-| 12 | Guyana News | Agent | Research |
+| 12 | Current Events | Agent | Research |
 | 13 | Git Backup | Agent | DevOps |
 | 14 | Loop Engineer (this system) | Meta | Self-improvement |
 
@@ -151,7 +151,7 @@ Do NOT just do 3 web searches. Research systematically:
 
 ### Output
 
-Write proposals to `~/.hermes/data/loop-engineer/current-proposals.json`:
+Write proposals to `~/.loopforge/data/loop-engineer/current-proposals.json`:
 
 ```json
 [
@@ -206,7 +206,7 @@ Also ensure `sprint-budget.json` exists (the script creates a default if missing
 | Risk Assessor | Gemini 2.5 Flash | "What could go wrong? Blast radius, security, dependencies." |
 | Priority Arbitrator | GPT-4o Mini | "Is this the best use of our budget this sprint?" |
 
-All members are content-agnostic — they evaluate any proposal type (Docker, LinkedIn, firewall, meal planning) through their role's lens.
+All members are content-agnostic — they evaluate any proposal type (Docker, research, firewall, meal planning) through their role's lens.
 
 ### ROI Analysis
 
@@ -230,8 +230,8 @@ The PM includes `value_per_week` in each proposal. The committee uses this to ev
 ### Scripts
 
 ```bash
-python3 ~/.hermes/scripts/steering-committee.py evaluate
-python3 ~/.hermes/scripts/steering-committee.py status
+python3 ~/.loopforge/scripts/steering-committee.py evaluate
+python3 ~/.loopforge/scripts/steering-committee.py status
 ```
 
 **Note:** There is NO `auto-ship` subcommand. The script only has `evaluate` and `status`. Auto-ship processing is done by the facilitator (see Facilitator Workflow below).
@@ -261,7 +261,7 @@ Read the proposals. Be analytical and critical.
 
 ### Decision
 
-Write verdicts to `~/.hermes/data/loop-engineer/idea-verdicts.json`:
+Write verdicts to `~/.loopforge/data/loop-engineer/idea-verdicts.json`:
 
 ```json
 [
@@ -282,12 +282,12 @@ Write verdicts to `~/.hermes/data/loop-engineer/idea-verdicts.json`:
 
 ### Process
 
-1. Check `~/.hermes/data/loop-engineer/sprint-plan.json` — only implement items in the `auto_ship` list
+1. Check `~/.loopforge/data/loop-engineer/sprint-plan.json` — only implement items in the `auto_ship` list
 2. For each auto-shipped item, read the proposal and implementation plan
 3. Invoke Claude Code:
 
 ```bash
-claude -p "Read the proposal at ~/.hermes/data/loop-engineer/current-proposals.json (find proposal with ID: <id>). Implement the recommended improvement. Preserve existing output format. Add comments explaining new logic. Do NOT rewrite the entire file — make the ONE specific change described in the implementation plan." \
+claude -p "Read the proposal at ~/.loopforge/data/loop-engineer/current-proposals.json (find proposal with ID: <id>). Implement the recommended improvement. Preserve existing output format. Add comments explaining new logic. Do NOT rewrite the entire file — make the ONE specific change described in the implementation plan." \
   --allowedTools "Read,Edit,Write,Bash" \
   --max-turns 15 \
   --max-budget-usd 0.50 \
@@ -295,7 +295,7 @@ claude -p "Read the proposal at ~/.hermes/data/loop-engineer/current-proposals.j
 ```
 
 4. Verify Claude Code's work — did it actually change? Does it match the proposal?
-5. Record actual cost: `python3 ~/.hermes/scripts/steering-committee.py apply-cost <id> <actual_cost>`
+5. Record actual cost: `python3 ~/.loopforge/scripts/steering-committee.py apply-cost <id> <actual_cost>`
 
 **DO NOT implement escalated or deferred items.** Those wait for [USER]'s approval or next sprint.
 
@@ -326,7 +326,7 @@ This fallback is equivalent to Claude Code for minor/medium changes. For complex
 
 ### Decision
 
-Write verdicts to `~/.hermes/data/loop-engineer/code-verdicts.json`:
+Write verdicts to `~/.loopforge/data/loop-engineer/code-verdicts.json`:
 
 ```json
 [
@@ -384,7 +384,7 @@ The approval mechanism is an asynchronous human-in-the-loop system. No job ever 
 ### Architecture
 
 ```
-Agent runs → encounters change → writes proposal to ~/.hermes/approvals/pending/
+Agent runs → encounters change → writes proposal to ~/.loopforge/approvals/pending/
   → Sends Discord/Telegram notification to [USER]
   → Job exits (no waiting)
 
@@ -396,9 +396,9 @@ Approval Processor cron (every 15m) → finds approved items → applies them
 ### [USER]'s Interaction Pattern
 
 [USER] says "Approve apr-XXXXXX" (short ID). The agent should:
-1. Find the matching file in `~/.hermes/approvals/pending/` (files use full IDs like `apr-YYYYMMDD-HHMM-XXXXXX.json`)
+1. Find the matching file in `~/.loopforge/approvals/pending/` (files use full IDs like `apr-YYYYMMDD-HHMM-XXXXXX.json`)
 2. Read it to confirm what the approval is for
-3. Run `python3 ~/.hermes/scripts/approval-manager.py approve --id <full-id> --note "Approved by [USER]"`
+3. Run `python3 ~/.loopforge/scripts/approval-manager.py approve --id <full-id> --note "Approved by [USER]"`
 4. Report back to [USER] what was approved
 
 [USER] can also say "Deny apr-XXXXXX" — use `approval-manager.py deny --id <full-id> --reason "..."`.
@@ -406,7 +406,7 @@ Approval Processor cron (every 15m) → finds approved items → applies them
 ### Directory Structure
 
 ```
-~/.hermes/approvals/
+~/.loopforge/approvals/
   pending/     # Awaiting [USER]'s approval
   approved/    # Approved, waiting to be processed
   denied/      # Denied by [USER]
@@ -419,7 +419,7 @@ Approval Processor cron (every 15m) → finds approved items → applies them
 
 ```bash
 # Propose a change
-python3 ~/.hermes/scripts/approval-manager.py propose \
+python3 ~/.loopforge/scripts/approval-manager.py propose \
   --title "Update firewall rule" \
   --description "Add rate limiting to WAN_IN" \
   --risk medium \
@@ -427,16 +427,16 @@ python3 ~/.hermes/scripts/approval-manager.py propose \
   --proposed-by "loop-engineer"
 
 # Check status
-python3 ~/.hermes/scripts/approval-manager.py status
+python3 ~/.loopforge/scripts/approval-manager.py status
 
 # Approve (called by agent when [USER] responds)
-python3 ~/.hermes/scripts/approval-manager.py approve --id apr-XXXXXX --note "Looks good"
+python3 ~/.loopforge/scripts/approval-manager.py approve --id apr-XXXXXX --note "Looks good"
 
 # Deny (called by agent when [USER] responds)
-python3 ~/.hermes/scripts/approval-manager.py deny --id apr-XXXXXX --reason "Wait until..."
+python3 ~/.loopforge/scripts/approval-manager.py deny --id apr-XXXXXX --reason "Wait until..."
 
 # Generate digest
-python3 ~/.hermes/scripts/approval-manager.py digest
+python3 ~/.loopforge/scripts/approval-manager.py digest
 ```
 
 ### Risk-Based Expiration
@@ -457,7 +457,7 @@ Every approved change has a rollback window of **3 runs** (configurable). The ag
 `backlog.md` is populated by real problems, not manual entries.
 
 **How items get added:**
-- [USER] gives feedback → `python3 ~/.hermes/scripts/loop-engineer-feedback.py --feedback "..."`
+- [USER] gives feedback → `python3 ~/.loopforge/scripts/loop-engineer-feedback.py --feedback "..."`
 - Incident occurs → `--incident /path/to/incident.md`
 - Verifier rejects → `--verifier "..."`
 - System identifies own gap → `--system "..."`
@@ -474,7 +474,7 @@ The pipeline learns from its own outcomes. Three feedback mechanisms:
 
 After Code Writer implements, it records actual cost vs estimate:
 ```bash
-python3 ~/.hermes/scripts/pipeline-tracker.py record-cost --id prop-001 --estimated 0.40 --actual 0.45
+python3 ~/.loopforge/scripts/pipeline-tracker.py record-cost --id prop-001 --estimated 0.40 --actual 0.45
 ```
 
 The tracker learns: "PM consistently underestimates by ~15%." This context feeds back to the PM for better estimation.
@@ -483,7 +483,7 @@ The tracker learns: "PM consistently underestimates by ~15%." This context feeds
 
 Monthly verification checks whether shipped improvements had their claimed impact:
 ```bash
-python3 ~/.hermes/scripts/pipeline-tracker.py record-outcome --id prop-001 --claimed 0.80 --measured 0.60 --notes "Saves ~7 min/week, not 10"
+python3 ~/.loopforge/scripts/pipeline-tracker.py record-outcome --id prop-001 --claimed 0.80 --measured 0.60 --notes "Saves ~7 min/week, not 10"
 ```
 
 If the PM claims "saves 10 min/week" and the reality is 7 min/week, the PM learns to estimate more conservatively.
@@ -492,24 +492,24 @@ If the PM claims "saves 10 min/week" and the reality is 7 min/week, the PM learn
 
 The facilitator writes committee feedback directly to `pm-context.json` (fields: `committee_feedback_summary`, `instructions`, `known_issues`). Individual member evaluations live in `committee-evaluations/<member>-<timestamp>.json`.
 
-Before the PM generates new proposals, it reads the context file at `~/.hermes/data/loop-engineer/pm-context.json`. The PM sees: "Last cycle, 2 proposals were deferred because 'low impact.' Avoid repeating this pattern."
+Before the PM generates new proposals, it reads the context file at `~/.loopforge/data/loop-engineer/pm-context.json`. The PM sees: "Last cycle, 2 proposals were deferred because 'low impact.' Avoid repeating this pattern."
 
 **Note:** `pipeline-tracker.py add-feedback` and `feedback-for-pm` exist but are not used by the current facilitator workflow. The facilitator writes directly to pm-context.json instead.
 
 ### Reports
 
 ```bash
-python3 ~/.hermes/scripts/pipeline-tracker.py cost-report      # Estimate vs actual analysis
-python3 ~/.hermes/scripts/pipeline-tracker.py outcome-report   # Claimed vs measured impact
-python3 ~/.hermes/scripts/pipeline-tracker.py feedback-for-pm  # Committee feedback summary (currently unused — feedback goes to pm-context.json directly)
-python3 ~/.hermes/scripts/pipeline-tracker.py pm-context       # Generate PM context file
+python3 ~/.loopforge/scripts/pipeline-tracker.py cost-report      # Estimate vs actual analysis
+python3 ~/.loopforge/scripts/pipeline-tracker.py outcome-report   # Claimed vs measured impact
+python3 ~/.loopforge/scripts/pipeline-tracker.py feedback-for-pm  # Committee feedback summary (currently unused — feedback goes to pm-context.json directly)
+python3 ~/.loopforge/scripts/pipeline-tracker.py pm-context       # Generate PM context file
 ```
 
 **Note:** `feedback-for-pm` currently returns empty because the facilitator writes to `pm-context.json` directly. To see feedback, read `pm-context.json` or check `committee-evaluations/` for individual member evaluations.
 
 ## State Files
 
-All in `~/.hermes/data/loop-engineer/`:
+All in `~/.loopforge/data/loop-engineer/`:
 
 | File | Purpose |
 |------|---------|
@@ -530,12 +530,12 @@ All in `~/.hermes/data/loop-engineer/`:
 
 ## Feedback Ingestion
 
-Script: `~/.hermes/scripts/loop-engineer-feedback.py`
+Script: `~/.loopforge/scripts/loop-engineer-feedback.py`
 
 ```bash
-python3 ~/.hermes/scripts/loop-engineer-feedback.py --feedback "ic-containers.py gave wrong alert"
-python3 ~/.hermes/scripts/loop-engineer-feedback.py --verifier "Research only did web searches, no GitHub repos"
-python3 ~/.hermes/scripts/loop-engineer-feedback.py --system "Improver prompt too vague"
+python3 ~/.loopforge/scripts/loop-engineer-feedback.py --feedback "ic-containers.py gave wrong alert"
+python3 ~/.loopforge/scripts/loop-engineer-feedback.py --verifier "Research only did web searches, no GitHub repos"
+python3 ~/.loopforge/scripts/loop-engineer-feedback.py --system "Improver prompt too vague"
 ```
 
 ## Self-Improvement
