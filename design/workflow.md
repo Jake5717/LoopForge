@@ -15,7 +15,7 @@ Four ways problems enter the system:
 | **Verifier Findings** | Previous cycle found a gap | "ic-errors.py missing cross-host correlation" |
 | **System Gaps** | The system identifies its own weakness | "Advisory Board from cron doesn't work" |
 
-**How feedback gets ingested:** I run `python3 ~/.hermes/scripts/loop-engineer-feedback.py --feedback "..."` and it adds the item to `backlog.md` under the relevant job.
+**How feedback gets ingested:** I run `python3 ~/.loopforge/scripts/loop-engineer-feedback.py --feedback "..."` and it adds the item to `backlog.md` under the relevant job.
 
 ### 2. DYNAMIC BACKLOG
 
