@@ -2,7 +2,7 @@
 
 ## Intake Process
 
-Users submit requests via natural conversation. Hermes routes them to `~/.hermes/data/loop-engineer/requests.md`.
+Users submit requests via natural conversation. Your agent framework routes them to `~/.loopforge/data/loop-engineer/requests.md`.
 
 **Request types:**
 | Type | Example | Flow |
@@ -23,7 +23,7 @@ Users submit requests via natural conversation. Hermes routes them to `~/.hermes
 
 ## Changelog
 
-Every committed improvement includes an entry in `~/.hermes/data/loop-engineer/changelog.md`:
+Every committed improvement includes an entry in `~/.loopforge/data/loop-engineer/changelog.md`:
 - What changed (plain English)
 - Why it changed (research finding)
 - Risk (what could go wrong)

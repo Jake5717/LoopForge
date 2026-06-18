@@ -6,32 +6,32 @@ The Loop Engineer's backlog is NOT a static list — it's fed by real problems f
 
 ## Backlog Location
 
-`~/.hermes/data/loop-engineer/backlog.md`
+`~/.loopforge/data/loop-engineer/backlog.md`
 
 ## How Items Get Added
 
 ### 1. [USER]'s Feedback (highest priority)
 When [USER] says "that script was wrong" or "ic-containers gave a bad alert":
 ```bash
-python3 ~/.hermes/scripts/loop-engineer-feedback.py --feedback "ic-containers.py false positive on NAS/host containers"
+python3 ~/.loopforge/scripts/loop-engineer-feedback.py --feedback "ic-containers.py false positive on NAS/host containers"
 ```
 
 ### 2. Incidents
-When `~/.hermes/incidents/` gets a new file, the relevant job gets prioritized:
+When `~/.loopforge/incidents/` gets a new file, the relevant job gets prioritized:
 ```bash
-python3 ~/.hermes/scripts/loop-engineer-feedback.py --incident ~/.hermes/incidents/<DATE>-<incident-name>.md
+python3 ~/.loopforge/scripts/loop-engineer-feedback.py --incident ~/.loopforge/incidents/<DATE>-<incident-name>.md
 ```
 
 ### 3. Verifier Findings
 When the Verifier flags something in a previous cycle:
 ```bash
-python3 ~/.hermes/scripts/loop-engineer-feedback.py --verifier "ic-errors.py missing cross-host correlation"
+python3 ~/.loopforge/scripts/loop-engineer-feedback.py --verifier "ic-errors.py missing cross-host correlation"
 ```
 
 ### 4. System Self-Assessment
 When the Loop Engineer identifies its own process gaps:
 ```bash
-python3 ~/.hermes/scripts/loop-engineer-feedback.py --system "Selection logic keeps picking ic-containers — needs broader rotation"
+python3 ~/.loopforge/scripts/loop-engineer-feedback.py --system "Selection logic keeps picking ic-containers — needs broader rotation"
 ```
 
 ## Backlog Format
